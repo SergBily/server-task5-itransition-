@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "settings": {
+      "import/extensions": [ ".js" ]
+    },
+    "rules": {
+      "import/prefer-default-export": "off",
+      "import/extensions": ["warn", "always"],
+      "class-methods-use-this": "off",
+      "consistent-return": "off",
+      "import/no-extraneous-dependencies": 0
+    }
+}
