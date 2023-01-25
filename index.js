@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 app.use(cors({
   origin: [process.env.CLIENT_URL],
-  methods: ['GET', 'POST', 'DELETE', 'PATCH'],
+  methods: ['GET', 'POST'],
   credentials: true,
 }));
 app.use('/', router);
@@ -27,12 +27,8 @@ const start = () => {
   mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }).then(() => {
-    console.log('Base work');
   });
-  app.listen(PORT, () => {
-    console.log('Port work');
-  });
+  app.listen(PORT);
 };
 
 start();
