@@ -21,7 +21,11 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'DELETE', 'PATCH'],
+  credentials: true,
+}));
 app.use('/', router);
 
 const start = () => {
