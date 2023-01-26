@@ -67,13 +67,13 @@ class GenerateErrors {
     let n = '';
     switch (e) {
       case 0:
-        n = this.deleteRandomCharacter(s);
+        n = this.swapNearCharacters(s);
         break;
       case 1:
-        n = this.addRandomCharacter(s, r);
+        n = this.deleteRandomCharacter(s);
         break;
       default:
-        n = this.swapNearCharacters(s);
+        n = this.addRandomCharacter(s, r);
         break;
     }
     return n;
