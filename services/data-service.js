@@ -44,7 +44,7 @@ class DataService {
   static createRandomData(region, seed) {
     faker.locale = region;
     faker.seed(seed);
-    const sex = faker.name.sexType();
+    const sex = faker.name.gender(true);
     const firstName = faker.name.firstName(sex);
     const lastName = faker.name.lastName(sex);
     const phoneSnippet = getPhoneSnippet(region);
@@ -60,7 +60,7 @@ class DataService {
         } ${faker.helpers.arrayElement([faker.address.state(), faker.address.stateAbbr()])
         }`.trim(),
       phone: faker.helpers.arrayElement(
-        [faker.phone.number(phoneSnippet[0]), faker.phone.number(phoneSnippet[1])],
+        [faker.phone.phoneNumber(phoneSnippet[0]), faker.phone.phoneNumber(phoneSnippet[1])],
       ),
     };
   }
